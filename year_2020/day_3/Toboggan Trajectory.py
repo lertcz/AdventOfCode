@@ -1,15 +1,15 @@
 from math import prod
 with open("input.txt", "r") as f:
-    input = [line.strip() for line in f.readlines()]
+    Input = [line.strip() for line in f.readlines()]
 
 answers = []
-forestLen = len(input[0])
+forestLen = len(Input[0])
 
 def slope(right, down=1):
     distance = 0
     trees = 0
 
-    for i, line in enumerate(input):
+    for i, line in enumerate(Input):
         if i % down == 0:
             if line[distance % forestLen] == "#":
                 trees += 1

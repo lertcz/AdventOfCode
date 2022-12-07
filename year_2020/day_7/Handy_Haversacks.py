@@ -1,19 +1,19 @@
 with open('input.txt', 'r') as f:
-    input = [line.strip().split(" contain ") for line in f.readlines()]
-    # split input
-    input = [[line[0][:-4].strip(), line[1][:-1].split(", ")] for line in input]
+    Input = [line.strip().split(" contain ") for line in f.readlines()]
+    # split Input
+    Input = [[line[0][:-4].strip(), line[1][:-1].split(", ")] for line in Input]
     # for each line add the source bag then add all childs and the quantity
-    input = [[bags[0], [[bag[0], (bag[2:])[:-4].strip()] for bag in bags[1]]] for bags in input]
+    Input = [[bags[0], [[bag[0], (bag[2:])[:-4].strip()] for bag in bags[1]]] for bags in Input]
 
 # create dictionary which will hold which bag hold what (part2)
 bags_children = dict()
-for bags in input:
+for bags in Input:
     bags_children[bags[0]] = bags[1] # bag key > bag children
 
 
 # create dict which stores the origin of a given bag (part1)
 bags_origin = dict()
-for bags in input:
+for bags in Input:
     parent = bags[0]
     for child in bags[1]:
         if child[1] in bags_origin.keys():

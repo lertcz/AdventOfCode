@@ -1,13 +1,13 @@
 from math import prod
 with open("input.txt", "r") as f:
-    input = [int(line.strip()) for line in f.readlines()]
+    Input = [int(line.strip()) for line in f.readlines()]
 
 p1 = None
 p2 = None
 
-for num1 in input:
-    for num2 in input:
-        for num3 in input:
+for num1 in Input:
+    for num2 in Input:
+        for num3 in Input:
 
             if num1 + num2 == 2020:
                 p1 = [num1, num2]

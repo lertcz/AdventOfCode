@@ -1,12 +1,12 @@
 with open("input.txt", "r") as f:
-    input = [int(line.strip()) for line in f.readlines()]
+    Input = [int(line.strip()) for line in f.readlines()]
 test = list(range(0,100))
 
 invalid = None
-for num in range(25, len(input)):
-	number = input[num]
+for num in range(25, len(Input)):
+	number = Input[num]
 	start = num-25
-	nums = input[num-25:num]
+	nums = Input[num-25:num]
 	ok = False
 	for n1 in nums:
 		for n2 in nums:
@@ -19,11 +19,11 @@ for num in range(25, len(input)):
 		break
 		
 endItAll = False
-for start in range(len(input)):
+for start in range(len(Input)):
 	end = 2
-	while sum(input[start:end]) <= invalid:
-		nums = sorted(input[start:end])
-		if end == len(input): break
+	while sum(Input[start:end]) <= invalid:
+		nums = sorted(Input[start:end])
+		if end == len(Input): break
 		if sum(nums) == invalid:
 			print('part2:', nums[0] + nums[-1])
 			endItAll = True

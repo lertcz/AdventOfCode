@@ -1,18 +1,18 @@
 with open("input.txt", "r") as f:
-    input = [[line[:3], int(line[4:])] for line in f.readlines()]
+    Input = [[line[:3], int(line[4:])] for line in f.readlines()]
 
-#[print(line) for line in input]
+#[print(line) for line in Input]
 
 visited = []
 accum = 0
 line = 0
 
 while True:
-	#print(input[line], line)
+	#print(Input[line], line)
 	if line in visited: break
 	visited.append(line)
 	
-	command, number = input[line]
+	command, number = Input[line]
 	
 	if command == 'nop':
 		line += 1

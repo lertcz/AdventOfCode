@@ -1,9 +1,9 @@
 with open('input.txt', 'r') as f:
-    input = [line.strip() for line in f.readlines()]
+    Input = [line.strip() for line in f.readlines()]
 
 answer = 0
 missing = []
-for boardingPass in input:
+for boardingPass in Input:
     row = [0, 127]
     for side in boardingPass[:7]:
         if side == 'F':

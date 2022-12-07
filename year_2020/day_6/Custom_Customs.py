@@ -1,9 +1,9 @@
 with open('input.txt', "r") as f:
-    input = [line.split("\n") for line in f.read().split("\n\n")]
+    Input = [line.split("\n") for line in f.read().split("\n\n")]
 
 part1 = 0
 part2 = 0
-for group in input:
+for group in Input:
     part1 += len(set(''.join(group)))
 
     chars = group[0]

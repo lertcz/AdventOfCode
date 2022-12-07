@@ -1,8 +1,8 @@
 with open("input.txt", "r") as f:
-    input = [str(line).split() for line in f.readlines()]
+    Input = [str(line).split() for line in f.readlines()]
 
 valid = [0, 0]
-for amount, char, password in input:
+for amount, char, password in Input:
     amount = [int(num) for num in amount.split("-")]
     char = char[0]
 
